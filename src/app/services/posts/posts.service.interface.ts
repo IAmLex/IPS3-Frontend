@@ -5,4 +5,5 @@ export interface IPostsService {
     posts : Subject<Post[]>
 
     refreshPosts() : void
+    savePost(post: Post) : void
 }

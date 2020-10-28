@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+// Google Fonts
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+
+$fontRoboto: 'Roboto', sans-serif;
+
+* {
+    font-family: $fontRoboto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px 0;
+}
+
+.form-item label {
+    margin-bottom: 10px;
+}
+
+.form-item input, .form-item button {
+    padding: 15px;
+    border-radius: 7px;
+    border: 1px solid grey;
+
+    font-size: 15px;
+}
+
+.form-item input:focus, .form-item button:focus {
+    outline: none!important;
+    border: 1px solid #333;
+}
+
+.form-item input.ng-dirty.ng-invalid {
+    border-color: red;
+}
+
+.form-item input.ng-valid {
+    border-color: #70c27b;
+}

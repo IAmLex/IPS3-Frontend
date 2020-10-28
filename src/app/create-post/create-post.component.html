@@ -1,0 +1,15 @@
+<p>create-post works!</p>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-item">
+        <input type="text" placeholder="content" ngModel name="content" required>
+    </div>
+
+    <div class="form-item">
+        <input type="text" placeholder="caption" ngModel name="caption" required>
+    </div>
+
+    <div class="form-item">
+        <button type="submit" [disabled]="f.invalid">Submit</button>
+    </div>
+</form>

@@ -9,12 +9,14 @@ import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { PostsService } from './services/posts/posts.service';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    PostsComponent
+    PostsComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
