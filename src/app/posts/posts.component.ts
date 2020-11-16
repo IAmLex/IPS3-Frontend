@@ -28,21 +28,15 @@ export class PostsComponent implements OnInit, OnDestroy {
     this.subs.add(this.postsService.posts.subscribe((posts) => {
       this.posts = posts;
     }));
+
+    this.refreshPosts();
   }
 
   public refreshPosts() {
     this.postsService.refreshPosts();
   }
 
-  onCreatePost() {
-    this.postCreated = true;
-    setTimeout(() => {
-      this.postCreated = false;
-    }, 2000);
-  }
-
   public ngOnDestroy() {
     this.subs.unsubscribe();
   }
-
 }

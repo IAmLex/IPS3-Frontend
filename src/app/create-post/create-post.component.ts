@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Post } from '../models/post.model';
-import { User } from '../models/user.model';
 import { IPostsService } from '../services/posts/posts.service.interface';
 
 @Component({
@@ -24,10 +23,11 @@ export class CreatePostComponent implements OnInit {
     let caption = form.value.caption;
 
     let post: Post = new Post();
-    post.user = new User();
     post.content = content;
     post.caption = caption;
-    post.user.id = 1;
+
+    // TODO: Create class for session storage
+    post.user.id = parseInt(sessionStorage.getItem("userId"));
 
     this.postsService.savePost(post);
   }

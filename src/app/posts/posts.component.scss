@@ -1,0 +1,32 @@
+.post {
+    background: #1a1a1b;
+    border: 1px solid rgb(129,131,132);
+    border-radius: 10px;
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    .header {
+        display: flex;
+        font-display: row;
+        
+        p:first-of-type {
+            margin-right: 5px;
+        }
+    }
+
+    .caption {
+        font-weight: bold;
+    }
+
+    .author {
+        align-self: flex-end;
+
+        font-size: 12px;
+        color: rgb(129,131,132);
+    }
+}
+
+.post:hover {
+    border-color: #f0f0f0;
+}

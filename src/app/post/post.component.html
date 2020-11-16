@@ -1,1 +1,20 @@
-<p>Post</p>
+<div class="post">
+    <div class="main">
+        <div class="header">
+            <p class="caption">{{post.caption}}</p>
+            <p class="author">Posted by {{post.user.username}}</p>
+        </div>
+        <p class="content">{{post.content}}</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-item">
+            <label for="comment">Comment</label>
+            <textarea placeholder="Got anything to say?.." id="comment" ngModel name="comment" required></textarea>
+        </div>
+    
+        <div class="form-button">
+            <button type="submit" [disabled]="f.invalid" class="button">Submit</button>
+        </div>
+    </form>
+</div>
