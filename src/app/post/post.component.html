@@ -1,8 +1,7 @@
 <div class="post">
     <div class="main">
         <div class="header">
-            <p class="caption">{{post.caption}}</p>
-            <p class="author">Posted by {{post.user.username}}</p>
+            <h3 class="caption">{{post.caption}} <span class="author">Posted by {{post.user.username}}</span></h3>
         </div>
         <p class="content">{{post.content}}</p>
     </div>
@@ -17,4 +16,14 @@
             <button type="submit" [disabled]="f.invalid" class="button">Submit</button>
         </div>
     </form>
+
+    <div class="comments">
+        <h3>Comments</h3>
+        <div *ngFor="let comment of comments" >
+            <div class="comment">
+                <p class="author">{{comment.user.username}}</p>
+                <p>{{comment.text}}</p>
+            </div>
+        </div>
+    </div>
 </div>

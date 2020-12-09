@@ -8,11 +8,13 @@ export class Interceptor implements HttpInterceptor {
         console.log(`${request.method.toUpperCase()} ${request.url}`)
 
         let authRequest: HttpRequest<any>;
-        if (request.url != "/api/authentication/login") {
+        if (!request.url.includes("/api/authentication/login")) {
             // TODO: Get token from session storage
             let token = sessionStorage.getItem("token");
             
             authRequest = request.clone({ setHeaders: { Authorization: token } });
+        } else {
+            authRequest = request;
         }
 
         return next.handle(authRequest);

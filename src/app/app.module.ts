@@ -13,9 +13,10 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { Interceptor } from './http-interceptors/interceptor';
 import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from './register/register.component';
-import { UserService } from './services/users/posts.service';
+import { UserService } from './services/users/user.service';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './services/authentication/authentication.service';
+import { CommentService } from './services/comments/comments.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { AuthenticationService } from './services/authentication/authentication.
     CreatePostComponent,
     HeaderComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +37,7 @@ import { AuthenticationService } from './services/authentication/authentication.
   providers: [
     { provide: 'IPostsService', useClass: PostsService },
     { provide: 'IUserService', useClass: UserService },
+    { provide: 'ICommentService', useClass: CommentService },
     { provide: 'IAuthenticationService', useClass: AuthenticationService },
     { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }
   ],

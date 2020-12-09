@@ -9,10 +9,6 @@ import { IPostsService } from '../services/posts/posts.service.interface';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit, OnDestroy {
-  newPostStatus = '';
-  newPostAllowed = false;
-  postCreated = false;
-  caption = 'Default caption';
   public posts: Post[] = [];
   private subs = new Subscription();
 
@@ -21,10 +17,6 @@ export class PostsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.newPostAllowed = true;
-    }, 500);
-
     this.subs.add(this.postsService.posts.subscribe((posts) => {
       this.posts = posts;
     }));
