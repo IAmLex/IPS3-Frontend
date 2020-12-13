@@ -13,6 +13,10 @@ export class AuthenticationService implements IAuthenticationService {
     let body = user;
 
     this.httpClient.post<any>(`http://localhost:8080/api/authentication/login`, body).subscribe((token) => {
+      if (!token) {
+        console.log("Not found");
+        return;
+      }
       sessionStorage.setItem("token", token.token);
       sessionStorage.setItem("userId", token.userId);
 

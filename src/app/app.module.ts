@@ -17,6 +17,9 @@ import { UserService } from './services/users/user.service';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './services/authentication/authentication.service';
 import { CommentService } from './services/comments/comments.service';
+import { ChatComponent } from './chat/chat.component';
+import { MessageComponent } from './message/message.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,15 @@ import { CommentService } from './services/comments/comments.service';
     HeaderComponent,
     RegisterComponent,
     LoginComponent,
+    ChatComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [
     { provide: 'IPostsService', useClass: PostsService },

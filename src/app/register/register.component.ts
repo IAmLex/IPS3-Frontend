@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 import { IUserService } from '../services/users/users.service.interface';
 
@@ -10,7 +11,10 @@ import { IUserService } from '../services/users/users.service.interface';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(@Inject('IUserService') private userService: IUserService) { }
+  constructor(
+    @Inject('IUserService') private userService: IUserService,
+    private router: Router  
+  ) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +33,7 @@ export class RegisterComponent implements OnInit {
     console.log(`${user.username} ${user.password} ${user.email}`);
 
     this.userService.saveUser(user);
+    this.router.navigate(["/posts"]);
   }
 
 }

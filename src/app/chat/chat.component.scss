@@ -1,0 +1,82 @@
+.chat {
+    display: flex;
+    height: 90vh;
+    width: 1500px;
+    margin: 0 auto;
+
+    .friends {
+        background: darkgray;
+        width: 400px;
+
+        .friend {
+            height: 50px;
+            background: #333;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .chatarea {
+        background: gray;
+        width: 1100px;
+
+        .header {
+            height: 65px;
+            background: #333;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .chatbox {
+            .message {
+                display: flex;
+    
+                .username {
+                    color: #ffbfe4;
+                    padding-right: 5px;
+                }
+            }
+    
+            .message.own {
+                .username {
+                    color: black;
+                }
+            }
+        }
+
+        
+
+        .input {
+            form {
+                display: flex;
+            }
+
+            input {
+                width: -webkit-fill-available;
+                margin: 5px;
+
+                background: #1a1a1b;
+                border: 1px solid rgb(129,131,132);
+                border-radius: 10px;
+                padding: 15px;
+
+                display: flex;
+                align-self: center;
+            }
+
+            input:focus {
+                outline: none;
+            }
+
+            button {
+                background: none;
+                border: none;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+
+
+        }
+    }
+}

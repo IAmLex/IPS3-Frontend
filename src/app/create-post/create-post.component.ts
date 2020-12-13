@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Post } from '../models/post.model';
 import { IPostsService } from '../services/posts/posts.service.interface';
@@ -13,7 +14,10 @@ export class CreatePostComponent implements OnInit {
   public saved: boolean;
   private subs = new Subscription();
 
-  constructor(@Inject('IPostsService') private postsService: IPostsService) { }
+  constructor(
+    @Inject('IPostsService') private postsService: IPostsService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -30,5 +34,7 @@ export class CreatePostComponent implements OnInit {
     post.user.id = parseInt(sessionStorage.getItem("userId"));
 
     this.postsService.savePost(post);
+    this.router.navigate(["/posts"]);
+
   }
 }

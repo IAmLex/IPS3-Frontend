@@ -4,10 +4,22 @@
             <a routerLink="/" routerLinkActive="active">
                 <img src="/assets/logo/logo.png" alt="Logo">
             </a>
-            <a routerLink="/" routerLinkActive="active" class="item">Home</a>
-            <a routerLink="/posts" routerLinkActive="active" class="item">Posts</a>
+            <div *ngIf="!loggedIn">
+                <a routerLink="/" routerLinkActive="active" class="item">Home</a>
+            </div>
+
+            <div *ngIf="loggedIn">
+                <a routerLink="/" routerLinkActive="active" class="item">Home</a>
+                <a routerLink="/posts" routerLinkActive="active" class="item">Posts</a>
+                <a routerLink="/chat" routerLinkActive="active" class="item">Chat</a>
+            </div>
         </div>
-        <div>
+
+        <div *ngIf="loggedIn">
+            <a class="item" (click)="logout()">Logout</a>
+        </div>
+            
+        <div *ngIf="!loggedIn">
             <a routerLink="/login" routerLinkActive="active" class="item">Login</a>
             <a routerLink="/register" routerLinkActive="active" class="item">Register</a>
         </div>

@@ -1,0 +1,29 @@
+<div class="chat">
+    <div class="friends">
+        <div class="friend">
+            <span>Name</span>
+        </div>
+    </div>
+    
+    <div class="chatarea">
+        <div class="header">
+            <p>Friend's name</p>
+        </div>
+        <div class="chatbox">
+            <div class="message">
+                <span class="username">Friend -></span>
+                <span>Message</span>
+            </div>
+            <div class="message own">
+                <span class="username">You -></span>
+                <span>Message</span>
+            </div>
+        </div>
+        <div class="input">
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+                <input type="message" name="message" ngModel required>
+                <button type="submit"><fa-icon [icon]="icon" class="fa-3x"></fa-icon></button>
+            </form>
+        </div>
+    </div>
+</div>
