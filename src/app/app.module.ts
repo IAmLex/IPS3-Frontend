@@ -18,7 +18,6 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './services/authentication/authentication.service';
 import { CommentService } from './services/comments/comments.service';
 import { ChatComponent } from './chat/chat.component';
-import { MessageComponent } from './message/message.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RegisterComponent,
     LoginComponent,
     ChatComponent,
-    MessageComponent
   ],
   imports: [
     BrowserModule,

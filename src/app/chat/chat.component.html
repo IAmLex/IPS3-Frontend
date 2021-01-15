@@ -10,14 +10,12 @@
             <p>Friend's name</p>
         </div>
         <div class="chatbox">
-            <div class="message">
-                <span class="username">Friend -></span>
-                <span>Message</span>
-            </div>
-            <div class="message own">
-                <span class="username">You -></span>
-                <span>Message</span>
-            </div>
+            <ul>
+                <li *ngFor="let message of webSocketService.getMessages()" class="message">
+                    <span class="username">{{message.username}} -></span>
+                    <span>{{message.message}}</span>
+                </li>
+            </ul>
         </div>
         <div class="input">
             <form (ngSubmit)="onSubmit(form)" #form="ngForm">

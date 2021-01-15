@@ -11,7 +11,7 @@ export class WebsocketService {
   constructor() { }
 
   public openWebsocket() {
-    this._webSocket = new WebSocket(`ws://localhost:8080/chat`);
+    this._webSocket = new WebSocket(`ws://localhost:8081/chat`);
 
     this._webSocket.onopen = (e) => {
       console.log(`Openend connection`);
@@ -20,6 +20,9 @@ export class WebsocketService {
     // Incoming message from the server
     this._webSocket.onmessage = (e) => {
       let message = JSON.parse(e.data);
+
+      // TODO: 
+
       this._messages.push(message);
     }
 

@@ -30,8 +30,6 @@ export class RegisterComponent implements OnInit {
     user.password = password;
     user.email = email;
 
-    console.log(`${user.username} ${user.password} ${user.email}`);
-
     this.userService.saveUser(user);
     this.router.navigate(["/posts"]);
   }
